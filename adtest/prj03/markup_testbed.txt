@@ -1,0 +1,710 @@
+= AsciiDoc markup testbed
+
+== Text formatting
+
+[frame="none",options="header"]
+|=========================================================
+|Description |Syntax |Result |Remark
+
+| Emphasis, quotes | `One 'Two' Three` | One 'Two' Three |
+| Emphasis, underscores | `One _Two_ Three` | One _Two_ Three |
+| Emphasis, quotes, unconstrained | `One''Two''Three` | One''Two''Three |
+| Emphasis, underscores, unconstrained | `One__Two__Three` | One__Two__Three |
+| Strong | `One *Two* Three` | One *Two* Three |
+| Strong, unconstrained | `One**Two**Three` | One**Two**Three |
+| Monospace | `One +Two+ Three` | One +Two+ Three |
+| Monospace, unconstrained | `One++Two++Three` | One++Two++Three |
+| Single quote | `One `Two´ Three` | One `Two´ Three | Doesn't seem to work
+| Double quotes | `One ``Two´´ Three` | One ``Two´´ Three | Doesn't seem to work
+| Single quote, unconstrained | `One``Two´´Three` | One``Two´´Three | Doesn't seem to work
+| Unquoted | `One #Two# Three` | One #Two# Three | Meant to add inline attributes (see next line)
+| Colored text | `One [red]#Two# Three` | One [red]#Two# Three |
+| Colored background | `One [yellow-background]#Two# Three` | One [yellow-background]#Two# Three |
+| Big text | `One [big]#Two# Three` | One [big]#Two# Three |
+| Underlined text | `One [underline]#Two# Three` | One [underline]#Two# Three |
+| Overlined text | `One [overline]#Two# Three` | One [overline]#Two# Three |
+| Line-through text | `One [line-through]#Two# Three` | One [line-through]#Two# Three |
+| Combinations | `One [red yellow-backgound line-through]*Two* Three` | One [red yellow-backgound line-through]*Two* Three |
+| Combinations, unconstrained | `One[red yellow-backgound line-through]**Two**Three` | One[red yellow-backgound line-through]**Two**Three |
+| Big text | `One [big]#Two# Three` | One [big]#Two# Three |
+| Superscript | `One ^Two^ Three` | One ^Two^ Three |
+| More superscript | `One^Two^Three` | One^Two^Three |
+| Subscript | `One ~Two~ Three` | One ~Two~ Three |
+| More subscript | `One~Two~Three` | One~Two~Three |
+|=========================================================
+
+== Paragraphs
+
+General syntax:
+
+--------------------------------------
+[<STYLE>]
+Some text. Not broken by
+blank lines.
+--------------------------------------
+
+Valid styles are: literal, verse, quote, listing, TIP, NOTE, IMPORTANT, WARNING, CAUTION, abstract, partintro, comment, example, sidebar, source, music, latex, graphviz
+
+Examples:
+
+=== Normal paragraphs
+
+Code:
+
+[listing]
+--
+How do you achieve a good balance between the test and control group? One good way is to 'randomize' the subjects. You can do this by randomly assigning all the subjects to one group or the other, or by first stratifying them into similar subsets, and then randomly assigning members from each subset into the test and control groups. It wouldn't do for the experimenter to assign subjects to one group or the other after having met the subjects; the experimenter might (consciously or unconsciously) assign healthier patients to one group.
+
+In some cases, you can assign all subjects to both groups: in psychology experiments that measure things like reaction time, you can every subject try every experimental condition (in randomized order), because there is little or no influence between each trial. Obviously, you can't have subjects try every possibility on things like cardiac operations: you can only choose one option for each subject.
+--
+
+Result:
+
+How do you achieve a good balance between the test and control group? One good way is to 'randomize' the subjects. You can do this by randomly assigning all the subjects to one group or the other, or by first stratifying them into similar subsets, and then randomly assigning members from each subset into the test and control groups. It wouldn't do for the experimenter to assign subjects to one group or the other after having met the subjects; the experimenter might (consciously or unconsciously) assign healthier patients to one group.
+
+In some cases, you can assign all subjects to both groups: in psychology experiments that measure things like reaction time, you can every subject try every experimental condition (in randomized order), because there is little or no influence between each trial. Obviously, you can't have subjects try every possibility on things like cardiac operations: you can only choose one option for each subject.
+
+
+=== Literal paragraphs
+
+==== Prefix with one or more spaces
+
+Code:
+
+[listing]
+--
+ How do you achieve a good balance between the test and control group? One good way is to 'randomize' the subjects. You can do this by randomly assigning all the subjects to one group or the other, or by first stratifying them into similar subsets, and then randomly assigning members from each subset into the test and control groups. It wouldn't do for the experimenter to assign subjects to one group or the other after having met the subjects; the experimenter might (consciously or unconsciously) assign healthier patients to one group.
+
+ In some cases, you can assign all subjects to both groups: in psychology experiments that measure things like reaction time, you can every subject try every experimental condition (in randomized order), because there is little or no influence between each trial. Obviously, you can't have subjects try every possibility on things like cardiac operations: you can only choose one option for each subject.
+--
+
+Result:
+
+ How do you achieve a good balance between the test and control group? One good way is to 'randomize' the subjects. You can do this by randomly assigning all the subjects to one group or the other, or by first stratifying them into similar subsets, and then randomly assigning members from each subset into the test and control groups. It wouldn't do for the experimenter to assign subjects to one group or the other after having met the subjects; the experimenter might (consciously or unconsciously) assign healthier patients to one group.
+
+ In some cases, you can assign all subjects to both groups: in psychology experiments that measure things like reaction time, you can every subject try every experimental condition (in randomized order), because there is little or no influence between each trial. Obviously, you can't have subjects try every possibility on things like cardiac operations: you can only choose one option for each subject.
+
+==== Add literal style
+
+Code:
+
+[listing]
+--
+[literal]
+How do you achieve a good balance between the test and control group? One good way is to 'randomize' the subjects. You can do this by randomly assigning all the subjects to one group or the other, or by first stratifying them into similar subsets, and then randomly assigning members from each subset into the test and control groups. It wouldn't do for the experimenter to assign subjects to one group or the other after having met the subjects; the experimenter might (consciously or unconsciously) assign healthier patients to one group.
+
+[literal]
+In some cases, you can assign all subjects to both groups: in psychology experiments that measure things like reaction time, you can every subject try every experimental condition (in randomized order), because there is little or no influence between each trial. Obviously, you can't have subjects try every possibility on things like cardiac operations: you can only choose one option for each subject.
+--
+
+Result:
+
+[literal]
+How do you achieve a good balance between the test and control group? One good way is to 'randomize' the subjects. You can do this by randomly assigning all the subjects to one group or the other, or by first stratifying them into similar subsets, and then randomly assigning members from each subset into the test and control groups. It wouldn't do for the experimenter to assign subjects to one group or the other after having met the subjects; the experimenter might (consciously or unconsciously) assign healthier patients to one group.
+
+[literal]
+In some cases, you can assign all subjects to both groups: in psychology experiments that measure things like reaction time, you can every subject try every experimental condition (in randomized order), because there is little or no influence between each trial. Obviously, you can't have subjects try every possibility on things like cardiac operations: you can only choose one option for each subject.
+
+=== Verse paragraphs
+
+Code:
+
+[listing]
+--
+[verse, William Blake, from Auguries of Innocence]
+To see a world in a grain of sand,
+And a heaven in a wild flower,
+Hold infinity in the palm of your hand,
+And eternity in an hour.
+--
+
+Result:
+
+[verse, William Blake, from Auguries of Innocence]
+To see a world in a grain of sand,
+And a heaven in a wild flower,
+Hold infinity in the palm of your hand,
+And eternity in an hour.
+
+=== Quote paragraphs
+
+Code:
+
+[listing]
+--
+[quote, Bertrand Russell, The World of Mathematics (1956)]
+A good notation has subtlety and suggestiveness which at times makes
+it almost seem like a live teacher.
+--
+
+Result:
+
+[quote, Bertrand Russell, The World of Mathematics (1956)]
+A good notation has subtlety and suggestiveness which at times makes
+it almost seem like a live teacher.
+
+=== Admonition paragraphs
+
+==== Use prefix
+
+Code:
+
+[listing]
+--
+NOTE: Mind the gap
+
+TIP: Mind the gap
+
+IMPORTANT: Mind the gap
+
+WARNING: Mind the gap
+
+CAUTION: Mind the gap
+--
+
+Result:
+
+NOTE: Mind the gap
+
+TIP: Mind the gap
+
+IMPORTANT: Mind the gap
+
+WARNING: Mind the gap
+
+CAUTION: Mind the gap
+
+==== Add style
+
+Code:
+
+[listing]
+--
+[NOTE]
+Mind the gap
+
+[TIP]
+Mind the gap
+
+[IMPORTANT]
+Mind the gap
+
+[WARNING]
+Mind the gap
+
+[CAUTION]
+Mind the gap
+--
+
+Result:
+
+[NOTE]
+Mind the gap
+
+[TIP]
+Mind the gap
+
+[IMPORTANT]
+Mind the gap
+
+[WARNING]
+Mind the gap
+
+[CAUTION]
+Mind the gap
+
+== Open blocks
+
+General syntax:
+
+--------------------------------------
+[<STYLE>]
+--
+...
+--
+--------------------------------------
+
+Valid styles : literal, verse, quote, listing, TIP, NOTE, IMPORTANT, WARNING, CAUTION, abstract, partintro, comment, example, sidebar, source, music, latex, graphviz
+
+Examples:
+
+=== Listing
+
+Code:
+
+--------------------------------------
+[listing]
+--
+#include <stdio.h>
+
+int main()
+{
+   printf("Hello World!\n");
+   exit(0);
+}
+--
+--------------------------------------
+
+Result:
+
+[listing]
+--
+#include <stdio.h>
+
+int main()
+{
+   printf("Hello World!\n");
+   exit(0);
+}
+--
+
+=== Literal
+
+Code:
+
+--------------------------------------
+[listing]
+--
+How do you achieve a good balance between the test and control group? One good way is to 'randomize' the subjects. You can do this by randomly assigning all the subjects to one group or the other, or by first stratifying them into similar subsets, and then randomly assigning members from each subset into the test and control groups. It wouldn't do for the experimenter to assign subjects to one group or the other after having met the subjects; the experimenter might (consciously or unconsciously) assign healthier patients to one group.
+--
+--------------------------------------
+
+Result:
+
+[listing]
+--
+How do you achieve a good balance between the test and control group? One good way is to 'randomize' the subjects. You can do this by randomly assigning all the subjects to one group or the other, or by first stratifying them into similar subsets, and then randomly assigning members from each subset into the test and control groups. It wouldn't do for the experimenter to assign subjects to one group or the other after having met the subjects; the experimenter might (consciously or unconsciously) assign healthier patients to one group.
+--
+
+== Lists
+
+=== Bulleted lists
+
+Code:
+
+[listing]
+--
+- Top level item
+* Sublevel
+* Sublevel
+** Subsublevel
+*** And deeper
+**** Four asterisks
+***** Up to five
+*** Level 3
+** Subsublevel
+- Top level item
+--
+
+Result:
+
+- Top level item
+* Sublevel
+* Sublevel
+** Subsublevel
+*** And deeper
+**** Four asterisks
+***** Up to five
+*** Level 3
+** Subsublevel
+- Top level item
+
+=== Numbered lists
+
+==== Explicit numbering
+
+Code:
+
+[listing]
+--
+1.   Arabic (decimal) numbered list item.
+a.   Lower case alpha (letter) numbered list item.
+b.   Lower case alpha (letter) numbered list item.
+A.   Upper case alpha (letter) numbered list item.
+B.   Upper case alpha (letter) numbered list item.
+C.   Upper case alpha (letter) numbered list item.
+i) Lower case roman numbered list item.
+ii) Lower case roman numbered list item.
+iii) Lower case roman numbered list item.
+iv) Lower case roman numbered list item.
+I)  Upper case roman numbered list item.
+--
+
+Result:
+
+1.   Arabic (decimal) numbered list item.
+a.   Lower case alpha (letter) numbered list item.
+b.   Lower case alpha (letter) numbered list item.
+A.   Upper case alpha (letter) numbered list item.
+B.   Upper case alpha (letter) numbered list item.
+C.   Upper case alpha (letter) numbered list item.
+i) Lower case roman numbered list item.
+ii) Lower case roman numbered list item.
+iii) Lower case roman numbered list item.
+iv) Lower case roman numbered list item.
+I)  Upper case roman numbered list item.
+
+==== Implicit numbering
+
+Code:
+
+[listing]
+--
+. Arabic (decimal) numbered list item.
+.. Lower case alpha (letter) numbered list item.
+... Lower case roman numbered list item.
+.... Upper case alpha (letter) numbered list item.
+..... Upper case roman numbered list item.
+--
+
+Result:
+
+. Arabic (decimal) numbered list item.
+.. Lower case alpha (letter) numbered list item.
+... Lower case roman numbered list item.
+.... Upper case alpha (letter) numbered list item.
+..... Upper case roman numbered list item.
+
+=== Mixing styles
+
+Also using style attributes.
+
+Code:
+
+[listing]
+--
+- Top level bullets
+* Second level bullets
+* Second level bullets
+[upperroman]
+.. Third level: uppercase roman numerals
+.. Third level: uppercase roman numerals
+[arabic]
+... Level 4: Arabic numerals
+... Level 4: Arabic numerals
+--
+
+Result:
+
+- Top level bullets
+* Second level bullets
+* Second level bullets
+[upperroman]
+.. Third level: uppercase roman numerals
+.. Third level: uppercase roman numerals
+[arabic]
+... Level 4: Arabic numerals
+... Level 4: Arabic numerals
+
+=== Labeled Lists
+
+Code:
+
+[listing]
+--
+*Canada*::
+Item text can consist of several paragraphs.
+Second line of first paragraph.
+
+Second paragraph is not auto-indented however.
+
+
+*USA*::
+First paragraph.
+
+  Second one. Indented in source code. It becomes "literal".
+
+    California::: In source, text can be on same line as label.
+    Texas:::
+        Houston;;
+        Dallas;; Item text is needed to end this list.
+--
+
+Result:
+
+*Canada*::
+Item text can consist of several paragraphs.
+Second line of first paragraph.
+
+Second paragraph is not auto-indented however.
+
+
+*USA*::
+First paragraph.
+
+  Second one. Indented in source code. It becomes "literal".
+
+    California::: In source, text can be on same line as label.
+    Texas:::
+        Houston;;
+        Dallas;; Item text is needed to end this list.
+
+
+==== Horizontal labeled Lists
+
+Code:
+
+[listing]
+--
+[horizontal]
+*Canada*:: Item text.
+
+  Indented second paragraph.
+*USA*:: Item text.
+--
+
+Result:
+
+[horizontal]
+*Canada*:: Item text.
+
+*USA*:: Item text.
+
+=== Questions & Answers
+
+[qanda]
+Question one::
+        Answer one.
+Question two::
+        Answer two.
+
+=== Glossary
+
+Glossary entries are an example of a style
+of AsciiDoc labeled lists.
+
+Code:
+
+[listing]
+--
+[glossary]
+A glossary term::
+  The corresponding (indented) definition.
+
+A second glossary term::
+  The corresponding (indented) definition.
+--
+
+Result:
+
+[glossary]
+A glossary term::
+  The corresponding (indented) definition.
+
+A second glossary term::
+  The corresponding (indented) definition.
+
+=== Bibliography
+
+Code:
+
+[listing]
+--
+[bibliography]
+.Books
+- [[[taoup]]] Eric Steven Raymond. 'The Art of Unix
+  Programming'. Addison-Wesley. ISBN 0-13-142901-9.
+- [[[walsh-muellner]]] Norman Walsh & Leonard Muellner.
+  'DocBook - The Definitive Guide'. O'Reilly & Associates. 1999.
+  ISBN 1-56592-580-7.
+
+[bibliography]
+.Articles
+- [[[abc2003]]] Gall Anonim. 'An article', Whatever. 2003.
+
+Links to bibliography entries:
+
+Please read <<taoup>>.
+
+For a guide on DcoBook, see: <<walsh-muellner>>
+
+This idea was first introduced in <<abc2003>>
+--
+
+Result:
+
+[bibliography]
+.Books
+- [[[taoup]]] Eric Steven Raymond. 'The Art of Unix
+  Programming'. Addison-Wesley. ISBN 0-13-142901-9.
+- [[[walsh-muellner]]] Norman Walsh & Leonard Muellner.
+  'DocBook - The Definitive Guide'. O'Reilly & Associates. 1999.
+  ISBN 1-56592-580-7.
+
+[bibliography]
+.Articles
+- [[[abc2003]]] Gall Anonim. 'An article', Whatever. 2003.
+
+Links to bibliography entries:
+
+Please read <<taoup>>.
+
+For a guide on DcoBook, see: <<walsh-muellner>>
+
+This idea was first introduced in <<abc2003>>
+
+=== List continuations
+
+Append block elements to a list with the +++ character.
+
+Code:
+
+--------------------------------------
+1. Step one: rename original file
++
+[literal]
+--
+$ mv myfile.txt myfile_BAK.txt
+--
++
+2. Step two: create new file
++
+[literal]
+--
+$ touch myfile.txt
+--
++
+3. Step three: done!
+--------------------------------------
+
+Result:
+
+1. Step one: rename original file
++
+[literal]
+--
+$ mv myfile.txt myfile_BAK.txt
+--
++
+2. Step two: create new file
++
+[literal]
+--
+$ touch myfile.txt
+--
++
+3. Step three: done!
+
+
+== Footnotes
+
+Code:
+[listing]
+--
+A footnote footnote:[An example footnote.].
+
+A second footnote with a reference ID footnoteref:[note2,Second footnote.].
+
+Finally a reference to the second footnote footnoteref:[note2].
+--
+
+Result:
+
+A footnote footnote:[An example footnote.].
+
+A second footnote with a reference ID footnoteref:[note2,Second footnote.].
+
+Finally a reference to the second footnote footnoteref:[note2].
+
+== Callouts
+
+[listing]
+--
+$ mv myfile.txt myfile_BAK.txt <1>
+$ touch myfile.txt <2>
+--
+
+<1> Rename original file
+<2> Create new file
+
+== Macros
+
+=== Links
+
+==== External links
+
+Code:
+
+[listing]
+--
+https://www.example.com[Example domain]
+
+mailto:me@example.com[Mail me!]
+--
+
+Result:
+
+https://www.example.com[Example domain]
+
+mailto:me@example.com[Mail me!]
+
+==== Links to local documents
+
+Code:
+
+[listing]
+--
+A text file can be found link:hello.txt[here]
+--
+
+Result:
+
+A text file can be found link:hello.txt[here]
+
+==== Links inside  document
+
+TODO : code/result
+
+[[THECOW]] The cow is here.
+
+The cow can be found xref:THECOW[here]
+
+
+=== Inline documents
+
+
+
+== Tables
+
+Code:
+
+[listing]
+--
+[cols="3,^2,^2,10",options="header"]
+|=========================================================
+|Date |Duration |Avg HR |Notes
+
+|22-Aug-08 |10:24 | 157 |
+Worked out MSHR (max sustainable heart rate) by going hard
+for this interval.
+
+|22-Aug-08 |23:03 | 152 |
+Back-to-back with previous interval.
+
+|24-Aug-08 |40:00 | 145 |
+Moderately hard interspersed with 3x 3min intervals (2min
+hard + 1min really hard taking the HR up to 160).
+
+|=========================================================
+--
+
+Result:
+
+[cols="3,^2,^2,10",options="header"]
+|=========================================================
+|Date |Duration |Avg HR |Notes
+
+|22-Aug-08 |10:24 | 157 |
+Worked out MSHR (max sustainable heart rate) by going hard
+for this interval.
+
+|22-Aug-08 |23:03 | 152 |
+Back-to-back with previous interval.
+
+|24-Aug-08 |40:00 | 145 |
+Moderately hard interspersed with 3x 3min intervals (2min
+hard + 1min really hard taking the HR up to 160).
+
+|=========================================================
+
+

@@ -1,11 +1,23 @@
 
-. change html header & footer in conf
-    . define in custom conf file
-    . js & css not inline in html
-
 . testbed:
     . code HL
     . MathJax
+    . try to use js/css from pygments/MathJax directly,
+        not the ones provided by asciidoc
+
+. Create a test page with examples of all asciidoc markup
+    --> prj03
+
+. Create dendron theme
+    . name of the theme?
+        --> dendron
+    . for comparison, default asciidoc theme can be used easily this way
+
+. recreate anthos page style & layout
+
+v change html header & footer in conf
+    v define in custom conf file
+    v js & css not inline in html
 
 v render without conf
     --> doesn't work. error.
