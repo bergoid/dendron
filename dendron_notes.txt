@@ -1,12 +1,10 @@
 
-. testbed:
-    . code HL
-    . MathJax
-    . try to use js/css from pygments/MathJax directly,
-        not the ones provided by asciidoc
-
-. Create a test page with examples of all asciidoc markup
-    --> prj03
+. create a wrapper script forthe 'asciidoc' command
+    . args:
+        . input file
+        . output file
+    . if 'attribs.txt' in CWD: add every line in it as an '-a ..' arg to
+      the 'asciidoc" command
 
 . Create dendron theme
     . name of the theme?
@@ -14,6 +12,22 @@
     . for comparison, default asciidoc theme can be used easily this way
 
 . recreate anthos page style & layout
+
+. testbed:
+    v code HL
+    . MathJax
+        v asciimath/latexmath
+    . try to use js/css directly,
+      not the ones provided by asciidoc:
+        . pygments
+        . mathjax
+
+. small js image gallery
+
+. html5 audio/video
+
+v Create a test page with examples of all asciidoc markup
+    --> prj03
 
 v change html header & footer in conf
     v define in custom conf file

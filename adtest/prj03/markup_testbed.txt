@@ -653,16 +653,200 @@ A text file can be found link:hello.txt[here]
 
 ==== Links inside  document
 
-TODO : code/result
+Code:
 
-[[THECOW]] The cow is here.
+[listing]
+--
+[[THEFISH]] The fish is here: +<><+
 
-The cow can be found xref:THECOW[here]
+The fish can be found xref:THEFISH[here]
+--
 
+Result:
+
+[[THEFISH]] The fish is here: +<><+
+
+The fish can be found xref:THEFISH[here]
 
 === Inline documents
 
+==== Images
 
+Code:
+
+[listing]
+--
+image:pripyat.jpg[alt="Soviet-era mural inside post office. Pripyat, Ukraine.",title="Pripyat post office mural"]
+
+image:pripyat.jpg[alt="Soviet-era mural inside post office. Pripyat, Ukraine.",title="Pripyat post office mural. Click for full size.",height=256,link="pripyat.jpg"]
+--
+
+Result:
+
+image:pripyat.jpg[alt="Soviet-era mural inside post office. Pripyat, Ukraine.",title="Pripyat post office mural"]
+
+image:pripyat.jpg[alt="Soviet-era mural inside post office. Pripyat, Ukraine.",title="Pripyat post office mural. Click for full size.",height=256,link="pripyat.jpg"]
+
+==== Asciidoc files
+
+Code:
+
+--------------------------------------
+[listing]
+--
+\include::hello.txt[]
+--
+--------------------------------------
+
+Result:
+
+[listing]
+--
+include::hello.txt[]
+--
+
+=== Comments
+
+Code:
+
+[listing]
+--
+This line gets shown.
+// This one doesn't.
+This one gets shown too.
+--
+
+Result:
+
+This line gets shown.
+// This one doesn't.
+This one gets shown too.
+
+=== Conditionals
+
+Code:
+
+[listing]
+--
++doctitle+:
+"{doctitle}"
+
++foo_attrib+:
+"{foo_attrib}"
+
++OK+ is shown only if +doctitle+ is defined:
+\ifdef::doctitle[]
++OK+
+\endif::doctitle[]
+
++OK+ is shown only if +foo_attrib+ is NOT defined:
+\ifndef::foo_attrib[]
++OK+
+\endif::foo_attrib[]
+
+\ifdef::doctitle[This line is shown only if +doctitle+ is defined.]
+
++OK+ is shown only if +doctitle+ OR +foo_attrib+ are defined:
+\ifdef::doctitle,foo_attrib[]
++OK+
+\endif::doctitle,foo_attrib[]
+
++OK+ is shown only if +doctitle+ AND +foo_attrib+ are defined:
+\ifdef::doctitle+foo_attrib[]
++OK+
+\endif::doctitle+foo_attrib[]
+--
+
+Result:
+
++doctitle+:
+"{doctitle}"
+
++foo_attrib+:
+"{foo_attrib}"
+
++OK+ is shown only if +doctitle+ is defined:
+ifdef::doctitle[]
++OK+
+endif::doctitle[]
+
++OK+ is shown only if +foo_attrib+ is NOT defined:
+ifndef::foo_attrib[]
++OK+
+endif::foo_attrib[]
+
+ifdef::doctitle[This line is shown only if +doctitle+ is defined.]
+
++OK+ is shown only if +doctitle+ OR +foo_attrib+ are defined:
+ifdef::doctitle,foo_attrib[]
++OK+
+endif::doctitle,foo_attrib[]
+
++OK+ is shown only if +doctitle+ AND +foo_attrib+ are defined:
+ifdef::doctitle+foo_attrib[]
++OK+
+endif::doctitle+foo_attrib[]
+
+=== Command macros
+
+==== Shell commands
+
+===== sys
+
+Displays stdout output of shell command.
+
+Code:
+
+--------------------------------------
+[listing]
+--
+\sys::[seq 0 2 10]
+--
+--------------------------------------
+
+Result:
+
+[listing]
+--
+sys::[seq 0 2 10]
+--
+
+===== sys2
+
+Displays stdout & stderr output of shell command.
+
+Code:
+
+--------------------------------------
+[listing]
+--
+\sys::[(echo "sys, stdout" ; echo "sys, stderr" >&2)]
+\sys2::[(echo "sys2, stdout" ; echo "sys2, stderr" >&2)]
+--
+--------------------------------------
+
+Result:
+
+[listing]
+--
+sys::[(echo "sys, stdout" ; echo "sys, stderr" >&2)]
+sys2::[(echo "sys2, stdout" ; echo "sys2, stderr" >&2)]
+--
+
+===== eval
+
+Displays the string value of a Python expression
+
+Code:
+
+[listing]
+--
+\eval::["Pyhon interpreter: +" + sys.version + "+"]
+--
+
+Result:
+
+eval::["Pyhon interpreter: +" + sys.version + "+"]
 
 == Tables
 
@@ -707,4 +891,77 @@ hard + 1min really hard taking the HR up to 160).
 
 |=========================================================
 
+== Syntax highlighting
 
+Code:
+
+--------------------------------------
+[source,bash]
+--
+echo "Hello!"
+pwd
+--
+--------------------------------------
+
+Result:
+
+[source,bash]
+--
+echo "Hello!"
+pwd
+--
+
+Code:
+
+--------------------------------------
+[source,python]
+--
+import sys
+
+print("Python interpreter" + sys.version)
+--
+--------------------------------------
+
+Result:
+
+[source,python]
+--
+import sys
+
+print("Python interpreter" + sys.version)
+--
+
+
+== Math
+
+=== AsciiMathML
+
+The attribute +asciimath+ needs to be defined.
+
+Code:
+
+[listing]
+--
+asciimath:[x/x={(1,if x!=0),(text{undefined},if x=0):}]
+--
+
+Result:
+
+asciimath:[x/x={(1,if x!=0),(text{undefined},if x=0):}]
+
+=== LatexMathML
+
+Either define +asciimath+ or +latexmath+.
+
+The glyphs are too small when +latexmath+ is defined.
+
+Code:
+
+[listing]
+--
+latexmath:[$\sum_{n=1}^\infty \frac{1}{2^n}$]
+--
+
+Result:
+
+latexmath:[$\sum_{n=1}^\infty \frac{1}{2^n}$]
