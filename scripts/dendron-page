@@ -13,9 +13,20 @@ Usage: $(basename "$0") INPUTFILE OUTPUTFILE
 
 '$(basename "$0")' converts tha AsciiDoc file INPUTFILE
 to the HTML file OUTPUTFILE.
+
 If the parent directory of OUTPUTFILE doesn't exist, it
 will be created.
-If a file named 'attribs.conf' exists in the same directory
+
+If a file named 'iattribs.txt' exists in the same directory
+as INPUTFILE, or in one of its parent directories higher
+up the path hierarchy, every attribute defined in it
+will also be defined when converting INPUTFILE.
+The attributes defined in the 'iattribs.txt' file that is
+highest up the hierarchy will be defined first, and the ones
+'lowest' last. This way, attributes defined 'lower' can
+override 'higher' ones.
+
+If a file named 'attribs.txt' exists in the same directory
 as INPUTFILE, every attribute defined in it will also be
 defined when converting INPUTFILE.
 DOCSTRING
@@ -42,7 +53,31 @@ dendronDir="$(readlink -f "$(dirname "$0")/..")"
 
 configFiles=(-f "${dendronDir}/conf/page.conf")
 
-attributes=
+currentDir="$inputDir"
+unset attributes
+until [ "$(trimTrailingSlashes "$currentDir")" = "/" ]; do
+
+    unset iattributes
+
+    if [ -f "${currentDir}/iattribs.txt" ]; then
+
+        while read nameValue; do
+
+            nameValue="$(trimOuterWhitespace "$nameValue")"
+
+            if [ -n "$nameValue" ]; then
+                iattributes=("${iattributes[@]}" -a "$nameValue")
+            fi
+
+        done <"${currentDir}/iattribs.txt"
+
+    fi
+
+    attributes=("${iattributes[@]}" "${attributes[@]}")
+    currentDir="$(dirname "$currentDir")"
+
+done
+
 if [ -f "${inputDir}/attribs.txt" ]; then
     while read nameValue; do
         attributes=(${attributes[@]} -a "$nameValue")
