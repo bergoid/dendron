@@ -1,10 +1,29 @@
 
-. create a wrapper script forthe 'asciidoc' command
-    . args:
-        . input file
-        . output file
-    . if 'attribs.txt' in CWD: add every line in it as an '-a ..' arg to
-      the 'asciidoc" command
+. create a wrapper script for the 'asciidoc' command
+    v name: dendron-page
+    v args:
+        v input file
+        v output file
+    v if 'attribs.txt' in same dir as input file: add '-a LINE' to the 'asciidoc' command for every LINE found in 'attribs.txt'
+    . only if input file is newer than output file?
+        . and attribs.txt is newer than output file.
+        --> not in script but in makefile rule. input file & attribs.txt are dependencies of the target (output file)
+    . for every 'iattribs.txt' in same dir as input file or one of the parent dirs : add their attribute definitions to 'asciidoc' command line.
+    --> every iattribs.txt found 'upstream' from input file must become a dependency in makefile rule of output file.
+
+. 'files' directory adjacent to input file: must be kept in sync with an identical dir adjacent to output file.
+    . files:
+        . added
+        . removed
+        . renamed
+        . edited
+      must be handled properly by this sync mechanism
+    . How to do this with GNU Make?
+        . use rsync command?
+        . it would be good if Make knew when both dirs are still in sync
+          and nothing needs to be done instead of always calling sync
+          command blindly.
+        . how to tell if source dir is 'newer' than target dir?
 
 . Create dendron theme
     . name of the theme?
@@ -12,6 +31,9 @@
     . for comparison, default asciidoc theme can be used easily this way
 
 . recreate anthos page style & layout
+
+. use tocbot
+    https://tscanlin.github.io/tocbot/
 
 . testbed:
     v code HL

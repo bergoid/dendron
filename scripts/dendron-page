@@ -1,0 +1,57 @@
+#!/bin/bash
+
+. rabot-utils
+if [ "$?" -ne "0" ]; then
+  echo "$0: Error while sourcing rabot-utils" >&2
+  exit 1
+fi
+
+function showHelp
+{
+cat << DOCSTRING
+Usage: $(basename "$0") INPUTFILE OUTPUTFILE
+
+'$(basename "$0")' converts tha AsciiDoc file INPUTFILE
+to the HTML file OUTPUTFILE.
+If the parent directory of OUTPUTFILE doesn't exist, it
+will be created.
+If a file named 'attribs.conf' exists in the same directory
+as INPUTFILE, every attribute defined in it will also be
+defined when converting INPUTFILE.
+DOCSTRING
+}
+
+checkForHelp $1
+minNumArgs 2 $#
+
+require asciidoc
+
+try test -f "$1"
+inputFile="$(readlink -f $1)"
+
+outputDir="$(dirname $2)"
+try mkdir -p "$outputDir"
+
+outputFile="$(readlink -f $2)"
+outputDir="$(readlink -f "$outputDir")"
+try test -d "$outputDir"
+
+inputDir="$(dirname $inputFile)"
+
+dendronDir="$(readlink -f "$(dirname "$0")/..")"
+
+configFiles=(-f "${dendronDir}/conf/page.conf")
+
+attributes=
+if [ -f "${inputDir}/attribs.txt" ]; then
+    while read nameValue; do
+        attributes=(${attributes[@]} -a "$nameValue")
+    done <"${inputDir}/attribs.txt"
+fi
+
+cmd=(asciidoc --backend=html5 --doctype=article -o "$outputFile" ${attributes[@]} ${configFiles[@]} "$inputFile")
+
+echo Command executed:
+echo ${cmd[@]}
+
+${cmd[@]}

@@ -1,0 +1,35 @@
+= AsciiDoc markup testbed
+
+== Math
+
+=== AsciiMathML
+
+The attribute +asciimath+ needs to be defined.
+
+Code:
+
+[listing]
+--
+asciimath:[x/x={(1,if x!=0),(text{undefined},if x=0):}]
+--
+
+Result:
+
+asciimath:[x/x={(1,if x!=0),(text{undefined},if x=0):}]
+
+=== LatexMathML
+
+Either define +asciimath+ or +latexmath+.
+
+The glyphs are too small when +latexmath+ is defined.
+
+Code:
+
+[listing]
+--
+latexmath:[$\sum_{n=1}^\infty \frac{1}{2^n}$]
+--
+
+Result:
+
+latexmath:[$\sum_{n=1}^\infty \frac{1}{2^n}$]
