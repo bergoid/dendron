@@ -1,4 +1,3 @@
-
 . create a wrapper script for the 'asciidoc' command
     v name: dendron-page
     v args:
@@ -8,7 +7,7 @@
     . only if input file is newer than output file?
         . and attribs.txt is newer than output file.
         --> not in script but in makefile rule. input file & attribs.txt are dependencies of the target (output file)
-    . for every 'iattribs.txt' in same dir as input file or one of the parent dirs : add their attribute definitions to 'asciidoc' command line.
+    v for every 'iattribs.txt' in same dir as input file or one of the parent dirs : add their attribute definitions to 'asciidoc' command line.
     --> every iattribs.txt found 'upstream' from input file must become a dependency in makefile rule of output file.
 
 . 'files' directory adjacent to input file: must be kept in sync with an identical dir adjacent to output file.
@@ -29,6 +28,10 @@
     . name of the theme?
         --> dendron
     . for comparison, default asciidoc theme can be used easily this way
+
+. Define an attribute containing the relative path from the page to the dendron base dir
+    . Let dendron-page determine the base dir every time?
+        . or only when an environment variable DENDRON_BASE_DIR si not defined?
 
 . recreate anthos page style & layout
 
