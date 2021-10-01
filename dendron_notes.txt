@@ -1,11 +1,11 @@
-. create a wrapper script for the 'asciidoc' command
+v create a wrapper script for the 'asciidoc' command
     v name: dendron-page
     v args:
         v input file
         v output file
     v if 'attribs.txt' in same dir as input file: add '-a LINE' to the 'asciidoc' command for every LINE found in 'attribs.txt'
-    . only if input file is newer than output file?
-        . and attribs.txt is newer than output file.
+    x only if input file is newer than output file?
+        x and attribs.txt is newer than output file.
         --> not in script but in makefile rule. input file & attribs.txt are dependencies of the target (output file)
     v for every 'iattribs.txt' in same dir as input file or one of the parent dirs : add their attribute definitions to 'asciidoc' command line.
     --> every iattribs.txt found 'upstream' from input file must become a dependency in makefile rule of output file.
@@ -26,7 +26,7 @@
 
 . Create dendron theme
     . name of the theme?
-        --> dendron
+        --> dendron-theme-default
     . for comparison, default asciidoc theme can be used easily this way
 
 . Define an attribute containing the relative path from the page to the dendron base dir

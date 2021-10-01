@@ -28,7 +28,11 @@ override 'higher' ones.
 
 If a file named 'attribs.txt' exists in the same directory
 as INPUTFILE, every attribute defined in it will also be
-defined when converting INPUTFILE.
+defined when converting INPUTFILE. These attributes override
+their namesakes in 'iattribs.txt'. An 'attribs.txt' file is
+for one-off customizations that are not meant to be inherited
+by pages in subdirectories.
+
 DOCSTRING
 }
 
