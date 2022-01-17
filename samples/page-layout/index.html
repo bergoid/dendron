@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <meta charset="utf-8">
+        <title>Layout sample page</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body class="flex-parent flex-row">
+        <aside id="aside-l" class="flex-child">
+            <nav id="site-toc">
+                Site TOC
+            </nav>
+        </aside>
+        <main class="flex-child flex-parent flex-column">
+            <nav id="path" class="flex-child">
+                Path to page
+            </nav>
+            <div id="content" class="flex-child flex-parent flex-row">
+                <article id="page" class="flex-child">
+                    Page content
+                </article>
+                <aside id="aside-r" class="flex-child flex-parent flex-column">
+                    <nav id="browse" class="flex-child">
+                        Browse buttons
+                    </nav>
+                    <nav id="page-toc" class="flex-child">
+                        Page TOC
+                    </nav>
+                </aside>
+            </div>
+        </main>
+    </body>
+</html>

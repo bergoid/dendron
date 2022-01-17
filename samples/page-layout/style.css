@@ -1,0 +1,66 @@
+body > aside > nav#site-toc
+{
+    background-color: #AAFFAA;
+}
+
+body > main > nav#path
+{
+    background-color: #FFFFAA;
+}
+
+body > main > div#content > article
+{
+    background-color: #CCCCFF;
+}
+
+body > main > div#content > aside#aside-r > nav#browse
+{
+    background-color: #AAFFFF;
+}
+
+body > main > div#content > aside#aside-r > nav#page-toc
+{
+    background-color: #FFCCCC;
+}
+
+.flex-child
+{
+    flex-grow: 1;
+}
+
+.flex-parent
+{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: stretch;
+}
+
+.flex-row
+{
+    flex-flow: row nowrap;
+}
+
+.flex-column
+{
+    flex-flow: column nowrap;
+}
+
+body > aside#aside-l
+{
+    flex-basis: 20%;
+}
+
+body > main
+{
+    flex-basis: 80%;
+}
+
+body > main > div#content > article#page
+{
+    flex-basis: 75%;
+}
+
+body > main > div#content > aside#aside-r
+{
+    flex-basis: 25%;
+}

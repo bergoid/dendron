@@ -1,3 +1,24 @@
+. change project name
+    . ?
+
+. make layout html demo page
+    . ideas:
+        . https://docs.asciidoctor.org/
+        . https://docs.voidlinux.org/
+    . use semantic html
+    . header (top)
+    . footer (bottom)
+    . dummy site-toc (25% left)
+    . dummy page-toc (25% right)
+    . dummy content (50% middle)
+    . toc sidebars: no scrollbars, but make it scroll along with the content
+        . when end of content in sidebar reached: stop scrolling
+    . page-toc: use tocbot.js
+    . responsive
+        . viewport in portrait, or on mobile:
+            . hide sidebars behind buttons
+
+
 v create a wrapper script for the 'asciidoc' command
     v name: dendron-page
     v args:
