@@ -1,6 +1,11 @@
+body
+{
+    margin: 0;
+}
+
 body > aside > nav#site-toc
 {
-    background-color: #AAFFAA;
+    background-color: #DDFFDD;
 }
 
 body > main > nav#path
@@ -10,7 +15,7 @@ body > main > nav#path
 
 body > main > div#content > article
 {
-    background-color: #CCCCFF;
+    background-color: #DDDDFF;
 }
 
 body > main > div#content > aside#aside-r > nav#browse
@@ -20,7 +25,7 @@ body > main > div#content > aside#aside-r > nav#browse
 
 body > main > div#content > aside#aside-r > nav#page-toc
 {
-    background-color: #FFCCCC;
+    background-color: #FFDDDD;
 }
 
 .flex-child
@@ -64,3 +69,23 @@ body > main > div#content > aside#aside-r
 {
     flex-basis: 25%;
 }
+
+body > main > nav#path
+{
+    flex-grow: 0;
+}
+
+body > main > nav#path
+{
+    flex-grow: 0;
+}
+
+body > main > div#content > aside#aside-r > nav#browse
+{
+    flex-grow: 0;
+}
+
+.padded
+{
+    padding: .5em;
+S}
