@@ -1,0 +1,25 @@
+.content-section
+{
+    background: lavender;
+    height: 1000px;
+    min-height: 100vh;
+    padding: 1em;
+}
+
+.sidebar-section
+{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-content
+{
+    background: cornflowerblue;
+    padding: 1em;
+}
+
+.sidebar-item
+{
+    flex-grow: 1;
+}

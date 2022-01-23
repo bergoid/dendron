@@ -21,11 +21,13 @@ body > main > div#content > article
 body > main > div#content > aside#aside-r > nav#browse
 {
     background-color: #AAFFFF;
+    flex-grow: 0;
 }
 
 body > main > div#content > aside#aside-r > nav#page-toc
 {
     background-color: #FFDDDD;
+    flex-grow: 0;
 }
 
 .flex-child
@@ -33,21 +35,23 @@ body > main > div#content > aside#aside-r > nav#page-toc
     flex-grow: 1;
 }
 
-.flex-parent
+.flex-row
 {
     display: flex;
     flex-flow: row nowrap;
     align-items: stretch;
 }
 
-.flex-row
-{
-    flex-flow: row nowrap;
-}
-
 .flex-column
 {
+    display: flex;
     flex-flow: column nowrap;
+    align-items: stretch;
+}
+
+.align-start
+{
+    align-items: start;
 }
 
 body > aside#aside-l
@@ -75,17 +79,21 @@ body > main > nav#path
     flex-grow: 0;
 }
 
-body > main > nav#path
+.sticky-top
 {
-    flex-grow: 0;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
 }
 
-body > main > div#content > aside#aside-r > nav#browse
+.sticky-bottom
 {
-    flex-grow: 0;
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 0;
 }
 
 .padded
 {
     padding: .5em;
-S}
+}

@@ -5,7 +5,7 @@
         <title>Layout sample page</title>
         <link rel="stylesheet" href="style.css">
     </head>
-    <body class="flex-parent flex-row">
+    <body class="flex-row">
         <aside id="aside-l" class="flex-child">
             <nav id="site-toc" class="padded">
                 Site TOC
@@ -262,12 +262,13 @@
                   </li>
                 </ul>
             </nav>
+            <div id="bottomsticker" class="sticky-bottom">hello</div>
         </aside>
-        <main class="flex-child flex-parent flex-column">
+        <main class="flex-child flex-column">
             <nav id="path" class="flex-child padded">
                 Path to page
             </nav>
-            <div id="content" class="flex-child flex-parent flex-row">
+            <div id="content" class="flex-child flex-row align-start">
                 <article id="page" class="flex-child padded">
                     <h1>The Unreasonable Effectiveness of Mathematics in the Natural Sciences</h1>
                     <h2>by Eugene Wigner</h2>
@@ -354,28 +355,29 @@
 
 <p>Merci W. Cooper</p>
                 </article>
-                <aside id="aside-r" class="flex-child flex-parent flex-column">
+                <aside id="aside-r" class="flex-child flex-column sticky-top">
                     <nav id="browse" class="flex-child padded">
                         Browse buttons
                     </nav>
                     <nav id="page-toc" class="flex-child padded">
-                    Contents:
-                    <ul>
-                        <li>
-                            <a href="#section-1">WHAT IS MATHEMATICS?</a>
-                        </li>
-                        <li>
-                            <a href="#section-2">WHAT IS PHYSICS?</a>
-                        </li>
-                        <li>
-                            <a href="#section-3">THE ROLE OF MATHEMATICS IN PHYSICAL THEORIES</a>
-                        </li>
-                        <li>
-                            <a href="#section-4">IS THE SUCCESS OF PHYSICAL THEORIES TRULY SURPRISING?</a>
-                        </li>
-                        <li>
-                            <a href="#section-5">THE UNIQUENESS OF THE THEORIES OF PHYSICS</a>
-                        </li>
+                        Contents:
+                        <ul>
+                            <li>
+                                <a href="#section-1">WHAT IS MATHEMATICS?</a>
+                            </li>
+                            <li>
+                                <a href="#section-2">WHAT IS PHYSICS?</a>
+                            </li>
+                            <li>
+                                <a href="#section-3">THE ROLE OF MATHEMATICS IN PHYSICAL THEORIES</a>
+                            </li>
+                            <li>
+                                <a href="#section-4">IS THE SUCCESS OF PHYSICAL THEORIES TRULY SURPRISING?</a>
+                            </li>
+                            <li>
+                                <a href="#section-5">THE UNIQUENESS OF THE THEORIES OF PHYSICS</a>
+                            </li>
+                        </ul>
                     </nav>
                 </aside>
             </div>
