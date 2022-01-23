@@ -6,6 +6,7 @@ body
 body > aside > nav#site-toc
 {
     background-color: #DDFFDD;
+    align-self: start;
 }
 
 body > main > nav#path
