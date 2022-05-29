@@ -1,56 +1,48 @@
 // Sticky sidebar
+//
+// Adapted from:
 // https://github.com/Krzysztof-Antosik/Two-direction-Sticky-Sidebar
 
 //aside selector
 const aside = document.querySelector(".stickySidebar");
 
-// variables
-// startScroll = 0;
-var endScroll = window.innerHeight - aside.offsetHeight;// -500;
-var currPos = window.scrollY;
-// screenHeight = window.innerHeight;
-// asideHeight = aside.offsetHeight;
-// aside.style.top = startScroll + 'px';
+// Keep track of previous scroll position
+var previousScrollY = window.scrollY;
+
+// Set style.top explicitly
 aside.style.top = '0px';
 
-// check height screen and aside on resize
-// window.addEventListener(
-//     'resize',
-//     () => {
-//         screenHeight = window.innerHeight;
-//         asideHeight = aside.offsetHeight;
-//     }
-// );
-
-// main function
+// onScroll event handler
 document.addEventListener(
     'scroll',
     () => {
-        endScroll = window.innerHeight - aside.offsetHeight;
         let asideTop = parseInt(aside.style.top.replace('px;', ''));
+//         console.log("asideTop == " + asideTop);
 
-//         if (asideHeight > screenHeight)
+        // Sidebar is too high to fit in viewport:
         if (aside.offsetHeight > window.innerHeight)
         {
-            if (window.scrollY < currPos)
+            // Scrolling up:
+            if (window.scrollY < previousScrollY)
             {
-                // scroll up
                 if (asideTop < 0)
                 {
-                    console.log("asideTop == " + asideTop);
-                    aside.style.top = (asideTop + currPos - window.scrollY) + 'px';
+                    aside.style.top = (asideTop + previousScrollY - window.scrollY) + 'px';
                 }
                 else if (asideTop > 0)
                 {
                     aside.style.top = '0px';
                 }
             }
+
+            // Scrolling down:
             else
             {
-                // scroll down
+                let endScroll = window.innerHeight - aside.offsetHeight;
+
                 if (asideTop > endScroll)
                 {
-                    aside.style.top = (asideTop + currPos - window.scrollY) + 'px';
+                    aside.style.top = (asideTop + previousScrollY - window.scrollY) + 'px';
                 }
                 else if (asideTop < endScroll)
                 {
@@ -58,12 +50,14 @@ document.addEventListener(
                 }
             }
         }
+
+        // Sidebar fits in viewport:
         else
         {
             aside.style.top = '0px';
         }
 
-        currPos = window.scrollY;
+        previousScrollY = window.scrollY;
     },
     {
         capture: true,
