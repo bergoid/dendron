@@ -1,5 +1,4 @@
 // Sticky sidebar
-//
 // Adapted from:
 // https://github.com/Krzysztof-Antosik/Two-direction-Sticky-Sidebar
 
@@ -16,45 +15,18 @@ aside.style.top = '0px';
 document.addEventListener(
     'scroll',
     () => {
-        let asideTop = parseInt(aside.style.top.replace('px;', ''));
-//         console.log("asideTop == " + asideTop);
-
-        // Sidebar is too high to fit in viewport:
+        // Only do stuff if sidebar is too high to fit in viewport
         if (aside.offsetHeight > window.innerHeight)
         {
-            // Scrolling up:
+            let currentTop = parseInt(aside.style.top.replace('px;', ''));
+
+            // Scrolling up
             if (window.scrollY < previousScrollY)
-            {
-                if (asideTop < 0)
-                {
-                    aside.style.top = (asideTop + previousScrollY - window.scrollY) + 'px';
-                }
-                else if (asideTop > 0)
-                {
-                    aside.style.top = '0px';
-                }
-            }
+                aside.style.top = Math.min(0, currentTop + previousScrollY - window.scrollY) + 'px';
 
-            // Scrolling down:
+            // Scrolling down
             else
-            {
-                let endScroll = window.innerHeight - aside.offsetHeight;
-
-                if (asideTop > endScroll)
-                {
-                    aside.style.top = (asideTop + previousScrollY - window.scrollY) + 'px';
-                }
-                else if (asideTop < endScroll)
-                {
-                    aside.style.top = endScroll + 'px';
-                }
-            }
-        }
-
-        // Sidebar fits in viewport:
-        else
-        {
-            aside.style.top = '0px';
+                aside.style.top = Math.max(window.innerHeight - aside.offsetHeight, currentTop + previousScrollY - window.scrollY) + 'px';
         }
 
         previousScrollY = window.scrollY;
