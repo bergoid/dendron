@@ -3,7 +3,7 @@
 // https://github.com/Krzysztof-Antosik/Two-direction-Sticky-Sidebar
 
 //aside selector
-const aside = document.querySelector(".stickySidebar");
+const aside = document.querySelector('.sticky-sidebar');
 
 // Keep track of previous scroll position
 var previousScrollY = window.scrollY;
