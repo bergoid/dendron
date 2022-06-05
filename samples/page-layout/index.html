@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js">
+<html lang="en" class="no-js">
     <head>
         <meta charset="utf-8">
         <title>Layout sample page</title>
@@ -8,266 +8,274 @@
     </head>
     <body class="flex-row">
         <aside id="aside-l" class="flex-child">
-            <div class="sticky-top overlay">
-                <div>W X Y Z 9 8 7 6</div>
-                <div>A B C D</div>
-                <div>WXYZ</div>
-                <div>M N O P 1 2 3 4</div>
-            </div>
-            <nav id="site-toc" class="padded sticky-sidebar">
-                Site TOC
-                <ul class="nav-list">
-                  <li class="nav-item" data-depth="0">
-                    <a class="nav-link" href="">Features</a>
-                  </li>
-                  <li class="nav-item" data-depth="0">
-                    <a class="nav-link" href="">What’s New in 2.0</a>
-                  </li>
-                  <li class="nav-item" data-depth="0">
-                    <a class="nav-link" href="">Install and Update</a>
+            <nav id="site-toc" class="sticky-sidebar flex-column">
+                <div class="ssb-fixed flex-child">
+                    <div>W X Y Z 9 8 7 6</div>
+                    <div>A B C D</div>
+                    <div>WXYZ</div>
+                    <div>M N O P 1 2 3 4</div>
+                </div>
+                <div class="ssb-spacer flex-child">
+                    <div>W X Y Z 9 8 7 6</div>
+                    <div>A B C D</div>
+                    <div>WXYZ</div>
+                    <div>M N O P 1 2 3 4</div>
+                </div>
+                <div class="ssb-scrollable flex-child">
+                    Site TOC
                     <ul class="nav-list">
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">Supported Platforms</a>
-                      </li>
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">Install Using Ruby Packaging</a>
-                      </li>
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">Install Using Linux Packaging</a>
-                      </li>
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">Install on macOS</a>
-                      </li>
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">Install on Windows</a>
-                      </li>
+                        <li class="nav-item" data-depth="0">
+                            <a class="nav-link" href="">Features</a>
+                        </li>
+                        <li class="nav-item" data-depth="0">
+                            <a class="nav-link" href="">What’s New in 2.0</a>
+                        </li>
+                        <li class="nav-item" data-depth="0">
+                            <a class="nav-link" href="">Install and Update</a>
+                            <ul class="nav-list">
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">Supported Platforms</a>
+                                </li>
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">Install Using Ruby Packaging</a>
+                                </li>
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">Install Using Linux Packaging</a>
+                                </li>
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">Install on macOS</a>
+                                </li>
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">Install on Windows</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item" data-depth="0">
+                            <a class="nav-link" href="">Convert Your First File</a>
+                        </li>
+                        <li class="nav-item" data-depth="0">
+                            <a class="nav-link" href="">Converters</a>
+                            <ul class="nav-list">
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">Available Converters</a>
+                                </li>
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">Custom Converter</a>
+                                </li>
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">Converter Templates</a>
+                                </li>
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">Convertible Contexts</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item is-active" data-depth="1">
+                            <a class="nav-link" href="">Generate HTML</a>
+                            <ul class="nav-list">
+                                <li class="nav-item is-active" data-depth="2">
+                                    <span class="nav-text" style="cursor: pointer;">Stylesheets</span>
+                                    <ul class="nav-list">
+                                        <li class="nav-item" data-depth="3">
+                                            <a class="nav-link" href="">Default Stylesheet</a>
+                                        </li>
+                                        <li class="nav-item" data-depth="3">
+                                            <a class="nav-link" href="">Stylesheet Modes</a>
+                                        </li>
+                                        <li class="nav-item" data-depth="3">
+                                            <a class="nav-link" href="">Apply a Custom Stylesheet</a>
+                                        </li>
+                                        <li class="nav-item" data-depth="3">
+                                            <a class="nav-link" href="">Embed a CodeRay or Pygments Stylesheet</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">Manage Images</a>
+                                </li>
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">Add a Favicon</a>
+                                </li>
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">Verbatim Block Line Wrapping</a>
+                                </li>
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">Skip Front Matter</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item" data-depth="1">
+                            <a class="nav-link" href="">Generate DocBook</a>
+                        </li>
+                        <li class="nav-item" data-depth="1">
+                            <a class="nav-link" href="">Generate Manual Pages</a>
+                        </li>
+                        <li class="nav-item" data-depth="0">
+                            <a class="nav-link" href="">Process AsciiDoc Using the CLI</a>
+                            <ul class="nav-list">
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">asciidoctor(1)</a>
+                                </li>
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">Specify an Output File</a>
+                                </li>
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">Process Multiple Source Files</a>
+                                </li>
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">Pipe Content Through the CLI</a>
+                                </li>
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">Set Safe Mode</a>
+                                </li>
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">CLI Options</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item is-active" data-depth="1">
+                            <a class="nav-link" href="">Process AsciiDoc Using the API</a>
+                            <ul class="nav-list">
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">Load and Convert Files</a>
+                                </li>
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">Load and Convert Strings</a>
+                                </li>
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">Generate an HTML TOC</a>
+                                </li>
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">Set Safe Mode</a>
+                                </li>
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">Enable the Sourcemap</a>
+                                </li>
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">Catalog Assets</a>
+                                </li>
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">API Options</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item is-active" data-depth="1">
+                            <a class="nav-link" href="">Safe Modes</a>
+                            <ul class="nav-list">
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">Safe Mode Specific Content</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item" data-depth="0">
+                            <a class="nav-link" href="">Docinfo Files</a>
+                        </li>
+                        <li class="nav-item" data-depth="0">
+                            <a class="nav-link" href="">AsciiDoc Tooling</a>
+                        </li>
+                        <li class="nav-item" data-depth="0">
+                            <a class="nav-link" href="">Syntax Highlighting</a>
+                            <ul class="nav-list">
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">Highlight.js</a>
+                                </li>
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">Rouge</a>
+                                </li>
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">CodeRay</a>
+                                </li>
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">Pygments</a>
+                                </li>
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">Custom Adapter</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item" data-depth="0">
+                            <a class="nav-link" href="">STEM Processing</a>
+                            <ul class="nav-list">
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">MathJax and HTML</a>
+                                </li>
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">Asciidoctor Mathematical</a>
+                                </li>
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">STEM Support in the DocBook Toolchain</a>
+                                </li>
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">AsciiMath Gem</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item" data-depth="0">
+                            <a class="nav-link" href="">Extensions</a>
+                            <ul class="nav-list">
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">Register Extensions</a>
+                                </li>
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">Preprocessor</a>
+                                </li>
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">Tree Processor</a>
+                                </li>
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">Postprocessor</a>
+                                </li>
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">Docinfo Processor</a>
+                                </li>
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">Block Processor</a>
+                                </li>
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">Compound Block Processor</a>
+                                </li>
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">Block Macro Processor</a>
+                                </li>
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">Inline Macro Processor</a>
+                                </li>
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">Include Processor</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item" data-depth="0">
+                            <a class="nav-link" href="">Localization Support</a>
+                        </li>
+                        <li class="nav-item" data-depth="0">
+                            <a class="nav-link" href="">Errors and Warnings</a>
+                        </li>
+                        <li class="nav-item" data-depth="0">
+                            <span class="nav-text" style="cursor: pointer;">Migration Guides</span>
+                            <ul class="nav-list">
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">Upgrade from Asciidoctor 1.5.x to 2.0</a>
+                                </li>
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">Migrate from AsciiDoc.py</a>
+                                </li>
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">Migrate from DocBook XML</a>
+                                </li>
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">Migrate from Markdown</a>
+                                </li>
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">Migrate from Confluence XHTML</a>
+                                </li>
+                                <li class="nav-item" data-depth="2">
+                                    <a class="nav-link" href="">Migrate from MS Word</a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
-                  </li>
-                  <li class="nav-item" data-depth="0">
-                    <a class="nav-link" href="">Convert Your First File</a>
-                  </li>
-                  <li class="nav-item" data-depth="0">
-                    <a class="nav-link" href="">Converters</a>
-                    <ul class="nav-list">
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">Available Converters</a>
-                      </li>
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">Custom Converter</a>
-                      </li>
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">Converter Templates</a>
-                      </li>
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">Convertible Contexts</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="nav-item is-active" data-depth="1">
-                    <a class="nav-link" href="">Generate HTML</a>
-                    <ul class="nav-list">
-                      <li class="nav-item is-active" data-depth="2">
-                        <span class="nav-text" style="cursor: pointer;">Stylesheets</span>
-                        <ul class="nav-list">
-                          <li class="nav-item" data-depth="3">
-                            <a class="nav-link" href="">Default Stylesheet</a>
-                          </li>
-                          <li class="nav-item" data-depth="3">
-                            <a class="nav-link" href="">Stylesheet Modes</a>
-                          </li>
-                          <li class="nav-item" data-depth="3">
-                            <a class="nav-link" href="">Apply a Custom Stylesheet</a>
-                          </li>
-                          <li class="nav-item" data-depth="3">
-                            <a class="nav-link" href="">Embed a CodeRay or Pygments Stylesheet</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">Manage Images</a>
-                      </li>
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">Add a Favicon</a>
-                      </li>
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">Verbatim Block Line Wrapping</a>
-                      </li>
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">Skip Front Matter</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="nav-item" data-depth="1">
-                    <a class="nav-link" href="">Generate DocBook</a>
-                  </li>
-                  <li class="nav-item" data-depth="1">
-                    <a class="nav-link" href="">Generate Manual Pages</a>
-                  </li>
-                  <li class="nav-item" data-depth="0">
-                    <a class="nav-link" href="">Process AsciiDoc Using the CLI</a>
-                    <ul class="nav-list">
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">asciidoctor(1)</a>
-                      </li>
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">Specify an Output File</a>
-                      </li>
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">Process Multiple Source Files</a>
-                      </li>
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">Pipe Content Through the CLI</a>
-                      </li>
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">Set Safe Mode</a>
-                      </li>
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">CLI Options</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="nav-item is-active" data-depth="1">
-                    <a class="nav-link" href="">Process AsciiDoc Using the API</a>
-                    <ul class="nav-list">
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">Load and Convert Files</a>
-                      </li>
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">Load and Convert Strings</a>
-                      </li>
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">Generate an HTML TOC</a>
-                      </li>
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">Set Safe Mode</a>
-                      </li>
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">Enable the Sourcemap</a>
-                      </li>
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">Catalog Assets</a>
-                      </li>
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">API Options</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="nav-item is-active" data-depth="1">
-                    <a class="nav-link" href="">Safe Modes</a>
-                    <ul class="nav-list">
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">Safe Mode Specific Content</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="nav-item" data-depth="0">
-                    <a class="nav-link" href="">Docinfo Files</a>
-                  </li>
-                  <li class="nav-item" data-depth="0">
-                    <a class="nav-link" href="">AsciiDoc Tooling</a>
-                  </li>
-                  <li class="nav-item" data-depth="0">
-                    <a class="nav-link" href="">Syntax Highlighting</a>
-                    <ul class="nav-list">
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">Highlight.js</a>
-                      </li>
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">Rouge</a>
-                      </li>
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">CodeRay</a>
-                      </li>
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">Pygments</a>
-                      </li>
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">Custom Adapter</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="nav-item" data-depth="0">
-                    <a class="nav-link" href="">STEM Processing</a>
-                    <ul class="nav-list">
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">MathJax and HTML</a>
-                      </li>
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">Asciidoctor Mathematical</a>
-                      </li>
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">STEM Support in the DocBook Toolchain</a>
-                      </li>
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">AsciiMath Gem</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="nav-item" data-depth="0">
-                    <a class="nav-link" href="">Extensions</a>
-                    <ul class="nav-list">
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">Register Extensions</a>
-                      </li>
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">Preprocessor</a>
-                      </li>
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">Tree Processor</a>
-                      </li>
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">Postprocessor</a>
-                      </li>
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">Docinfo Processor</a>
-                      </li>
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">Block Processor</a>
-                      </li>
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">Compound Block Processor</a>
-                      </li>
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">Block Macro Processor</a>
-                      </li>
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">Inline Macro Processor</a>
-                      </li>
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">Include Processor</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="nav-item" data-depth="0">
-                    <a class="nav-link" href="">Localization Support</a>
-                  </li>
-                  <li class="nav-item" data-depth="0">
-                    <a class="nav-link" href="">Errors and Warnings</a>
-                  </li>
-                  <li class="nav-item" data-depth="0">
-                    <span class="nav-text" style="cursor: pointer;">Migration Guides</span>
-                    <ul class="nav-list">
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">Upgrade from Asciidoctor 1.5.x to 2.0</a>
-                      </li>
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">Migrate from AsciiDoc.py</a>
-                      </li>
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">Migrate from DocBook XML</a>
-                      </li>
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">Migrate from Markdown</a>
-                      </li>
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">Migrate from Confluence XHTML</a>
-                      </li>
-                      <li class="nav-item" data-depth="2">
-                        <a class="nav-link" href="">Migrate from MS Word</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
+                </div>
             </nav>
         </aside>
         <main class="flex-child flex-column">
@@ -359,7 +367,7 @@
 
                     <p>Let me end on a more cheerful note. The miracle of the appropriateness of the language of mathematics for the formulation of the laws of physics is a wonderful gift which we neither understand nor deserve. We should be grateful for it and hope that it will remain valid in future research and that it will extend, for better or for worse, to our pleasure, even though perhaps also to our bafflement, to wide branches of learning.</p>
 
-<p>Merci W. Cooper</p>
+                    <p>Merci W. Cooper</p>
                 </article>
                 <aside id="aside-r" class="flex-child flex-column sticky-top">
                     <nav id="browse" class="flex-child padded sticky-top">

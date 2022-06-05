@@ -11,6 +11,8 @@ var previousScrollY = window.scrollY;
 // Set style.top explicitly
 aside.style.top = '0px';
 
+console.log("aside.style.top == " + aside.style.top);
+
 // onScroll event handler
 document.addEventListener(
     'scroll',
@@ -27,6 +29,8 @@ document.addEventListener(
             // Scrolling down
             else
                 aside.style.top = Math.max(window.innerHeight - aside.offsetHeight, currentTop + previousScrollY - window.scrollY) + 'px';
+
+            console.log("(onscroll) aside.style.top == " + aside.style.top);
         }
 
         previousScrollY = window.scrollY;
