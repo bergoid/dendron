@@ -31,6 +31,11 @@ body > main > div#content > aside#aside-r > nav#page-toc
     flex-grow: 0;
 }
 
+.padded
+{
+    padding: .5em;
+}
+
 .flex-child
 {
     flex-grow: 1;
@@ -86,33 +91,17 @@ body > main > nav#path
     top: 0;
 }
 
-.sticky-sidebar
+.sticky-sidebar > .ssb-content
 {
-    position: sticky;
-/*    position: absolute;*/
-    top: 0;
-    padding:0;
+    position: relative;
 }
 
-.padded
+.sticky-sidebar > .ssb-fixed
 {
-    padding: .5em;
-}
-
-.overlay
-{
-}
-
-.ssb-fixed
-{
+    box-sizing: border-box;
     z-index: 1;
-    background-color: rgba(255,255,128,1);
+    background-color: #AAFFFF;
     position: fixed;
+    top: 0;
     margin: 0;
-    opacity: 0.5;
-}
-
-.ssb-spacer
-{
-    background-color: #AAFFAA;
 }
