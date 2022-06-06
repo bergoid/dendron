@@ -18,7 +18,7 @@ document.addEventListener(
 
         // Scrolling up
         if (window.scrollY < previousScrollY)
-            ssb_content.style.top = Math.max(0, Math.min(parseInt(ssb_content.style.top.replace('px;', '')), window.scrollY)) + 'px';
+            ssb_content.style.top = Math.min(parseInt(ssb_content.style.top.replace('px;', '')), window.scrollY) + 'px';
 
         // Scrolling down
         else
