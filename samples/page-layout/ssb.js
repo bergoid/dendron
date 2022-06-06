@@ -4,12 +4,23 @@
 const ssb_fixed = document.querySelector('.sticky-sidebar > .ssb-fixed');
 const ssb_content = document.querySelector('.sticky-sidebar > .ssb-content');
 
-// Align ssb_content and ssb_fixed
-ssb_content.style.marginTop = ssb_fixed.offsetHeight + 'px';
-ssb_fixed.style.width = ssb_content.offsetWidth + 'px';
 
 // Keep track of previous scroll position
 var previousScrollY = window.scrollY;
+
+// Align ssb_content and ssb_fixed
+function align_ssb()
+{
+    ssb_content.style.marginTop = ssb_fixed.offsetHeight + 'px';
+    ssb_fixed.style.width = ssb_content.offsetWidth + 'px';
+}
+align_ssb();
+
+// onResize event handler
+window.addEventListener(
+    'resize',
+    align_ssb
+);
 
 // onScroll event handler
 document.addEventListener(
@@ -31,5 +42,3 @@ document.addEventListener(
         passive: true
     }
 );
-
-// TODO : onResize handler
