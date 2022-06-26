@@ -1,3 +1,7 @@
+v samples/sticky-sidebar-03:
+    example, using: https://github.com/abouolia/sticky-sidebar
+    source: https://abouolia.github.io/sticky-sidebar/examples/scrollable-element.html
+
 . make it work for sidebars with a style.top greater than 0px
 
 . support multiple sticky sidebars
